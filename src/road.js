@@ -7,9 +7,9 @@ class Road {
             this.left = x - width / 2;
             this.right = x + width / 2;
 
-            const infinity = 1000000;
-            this.top = -infinity;
-            this.bottom = infinity;
+            const INFINITY = 1000000;
+            this.top = -INFINITY;
+            this.bottom = INFINITY;
 
             const TOP_LEFT = { x: this.left, y: this.top }
             const TOP_RIGHT = { x: this.right, y: this.top }
@@ -25,7 +25,7 @@ class Road {
             const LANE_WIDTH = this.width / this.laneCount;
             return this.left + LANE_WIDTH / 2
                   + Math.min(laneIndex, this.laneCount - 1) * LANE_WIDTH;
-      }
+      };
 
       draw(ctx) {
             ctx.lineWidth = 5;
@@ -49,5 +49,5 @@ class Road {
                   ctx.lineTo(border[1].x, border[1].y);
                   ctx.stroke();
             });
-      }
+      };
 }

@@ -19,7 +19,7 @@ class Sensor {
                   );
                   
             }
-      }
+      };
 
       draw(ctx) {
             for (let i = 0; i < this.rayCount; i++) {
@@ -43,7 +43,7 @@ class Sensor {
                   ctx.lineTo(end.x, end.y);
                   ctx.stroke();
             }
-      }
+      };
 
       #getReadings(ray, roadBorders, traffic) {
             let touches = [];
@@ -77,11 +77,11 @@ class Sensor {
 
             if (touches.length === 0) return null;
             else {
-                  const offsets = touches.map(x => x.offset);
-                  const minOffset = Math.min(...offsets);
-                  return touches.find(x => x.offset === minOffset);
+                  const OFFSETS = touches.map(x => x.offset);
+                  const MIN_OFFSET = Math.min(...OFFSETS);
+                  return touches.find(x => x.offset === MIN_OFFSET);
             }
-      }
+      };
 
       #castRays() {
             this.rays = [];
@@ -100,5 +100,5 @@ class Sensor {
 
                   this.rays.push([START_POINT, END_POINT]);
             }
-      }
+      };
 }

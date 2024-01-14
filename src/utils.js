@@ -26,17 +26,22 @@ const polysIntersect = (poly1, poly2) => {
             for (let j = 0; j < poly2.length; j++) {
                   const TOUCH = getIntersection(
                         poly1[i],
-                        poly1[(i + 1)%poly1.length],
+                        poly1[(i + 1) % poly1.length],
                         poly2[j],
-                        poly2[(j + 1)%poly2.length]
+                        poly2[(j + 1) % poly2.length]
                   );
 
                   if (TOUCH) {
                         return true;
                   }
-            }            
+            }
       }
 
 
       return false;
 };
+
+const getRandomColor = () => {
+      const HUE = 290 + Math.random() * 260;
+      return "hsl(" + HUE + ", 100%, 60%)";
+}
